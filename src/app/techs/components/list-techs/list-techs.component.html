@@ -1,1 +1,35 @@
-<p>list-techs works!</p>
+<div class="bg-list">
+  <div class="container">
+
+    <h1>Lista de tecnologías</h1>
+
+    <div class="overflow-x">
+      <table class="table">
+          <thead class="table__thead">
+              <tr class="table__tr">
+                  <th class="table__th ">Nombre</th>
+                  <th class="table__th">Año</th>
+                  <th class="table__th">Creador</th>
+                  <th class="table__th">Licencia</th>
+                  <th class="table__th">Lenguaje</th>
+                  <th class="table__th">Tipo</th>
+                  <th class="table__th">Logo</th>
+              </tr>
+          </thead>
+          <tbody class="table__tbody">
+              <tr class="table__tr" *ngFor="let tech of listTechs">
+                  <td class="table__td">{{tech.tech}}</td>
+                  <td class="table__td">{{tech.year}}</td>
+                  <td class="table__td">{{tech.author }}</td>
+                  <td class="table__td">{{tech.license}}</td>
+                  <td class="table__td">{{tech.language}}</td>
+                  <td class="table__td">{{tech.type}}</td>
+                  <td class="table__td">
+                    <img width="50px" height="50px" [src]="tech.logo" [alt]="tech.tech">
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
