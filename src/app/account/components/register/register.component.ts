@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from '../../models/User';
 import { AccountService } from '../../services/account.service';
 import { DataListService } from '../../services/data-list.service';
@@ -20,7 +21,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private accountService: AccountService,
     private buildFrm: FormBuilder,
-    private countries: DataListService
+    private countries: DataListService,
+    private router: Router
   ) {
     this.buildForm();
     this.lists = countries.getConuntrie();
@@ -47,6 +49,7 @@ export class RegisterComponent implements OnInit {
         console.log(response);
         delete user.password;
         localStorage.setItem('user', JSON.stringify(user));
+        this.router.navigateByUrl('/perfil');
       });
   }
 

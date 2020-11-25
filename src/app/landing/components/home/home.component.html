@@ -8,8 +8,11 @@
       <li class="header__navigator--item">
         <a href="#benefits">Beneficios</a>
       </li>
-      <li class="header__navigator--item">
+      <li class="header__navigator--item" *ngIf="!user">
         <button class="btn button-outline-primary" routerLink="/cuenta/registro">Login</button>
+      </li>
+      <li class="header__navigator--item" *ngIf="user">
+        <button class="btn button-outline-primary" routerLink="/perfil">Perfil</button>
       </li>
     </ul>
   </nav>
