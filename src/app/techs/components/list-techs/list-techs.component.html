@@ -3,6 +3,22 @@
 
     <h1>Lista de tecnologías</h1>
 
+    <div>
+      <div>
+        <input type="text" #name (keyup)="filterTechForName(name.value)">
+      </div>
+
+      <div>
+        <select #typeTech (change)="filterTechsForType(typeTech.value)">
+          <option [value]="'Mobile'">Mobile</option>
+          <option [value]="'Front-End'">Front-End</option>
+          <option [value]="'Back-End'">Back-End</option>
+          <option [value]="'All'">Todas</option>
+        </select>
+      </div>
+
+    </div>
+
     <div class="overflow-x">
       <table class="table">
           <thead class="table__thead">
@@ -14,10 +30,11 @@
                   <th class="table__th">Lenguaje</th>
                   <th class="table__th">Tipo</th>
                   <th class="table__th">Logo</th>
+                  <th class="table__th">Favoritos</th>
               </tr>
           </thead>
           <tbody class="table__tbody">
-              <tr class="table__tr" *ngFor="let tech of listTechs">
+              <tr class="table__tr" *ngFor="let tech of techs">
                   <td class="table__td">{{tech.tech}}</td>
                   <td class="table__td">{{tech.year}}</td>
                   <td class="table__td">{{tech.author }}</td>
@@ -27,6 +44,7 @@
                   <td class="table__td">
                     <img width="50px" height="50px" [src]="tech.logo" [alt]="tech.tech">
                   </td>
+                  <td class="table__td">Like</td>
               </tr>
           </tbody>
       </table>
