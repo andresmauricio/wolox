@@ -1,3 +1,5 @@
+@import './Variables.scss';
+
 .btn {
   min-width: 17rem;
   max-width: 20rem;
@@ -18,28 +20,28 @@
 }
 
 .button-outline-primary {
-  border: 1px solid #00a9e5;
-  color: #00a9e5;
+  border: 1px solid $blue;
+  color: $blue;
 
   &:hover {
-    background-color: #00a9e5;
-    color: #ffffff;
+    background-color: $blue;
+    color: $white;
   }
 }
 
 .button-outline-secondary {
-  border: 1px solid #00a9e5;
-  color: #ffffff;
+  border: 1px solid $blue;
+  color: $white;
 
   &:hover {
-    background-color: #ffffff;
-    color: #00a9e5;
+    background-color: $white;
+    color: $blue;
   }
 }
 
 .button-primary {
-  background-color: #00a9e5;
-  color: #ffffff;
+  background-color: $blue;
+  color: $white;
 
   &:hover {
     background-color: #05bcff;
