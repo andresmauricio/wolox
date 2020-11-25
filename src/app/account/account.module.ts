@@ -5,10 +5,11 @@ import { AccountRoutingModule } from './account-routing.module';
 import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
 
 
 @NgModule({
-  declarations: [RegisterComponent],
+  declarations: [RegisterComponent, TermsAndConditionsComponent],
   imports: [
     CommonModule,
     AccountRoutingModule,
