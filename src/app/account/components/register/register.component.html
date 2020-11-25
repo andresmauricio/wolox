@@ -1,1 +1,10 @@
-<p>register works!</p>
+<form [formGroup]="registerFrm" (ngSubmit)="handlerForm()">
+  <input type="text" placeholder="Nombre" formControlName="name">
+  <input type="text" placeholder="Apellido" formControlName="last_name">
+  <input type="text" placeholder="País" formControlName="country">
+  <input type="text" placeholder="Departamento" formControlName="province">
+  <input type="text" placeholder="Correo" formControlName="mail">
+  <input type="text" placeholder="Celular" formControlName="phone">
+  <input type="text" placeholder="Contraseña" formControlName="password">
+  <button>Enviar</button>
+</form>
