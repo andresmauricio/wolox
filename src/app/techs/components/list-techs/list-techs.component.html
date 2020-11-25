@@ -10,10 +10,10 @@
 
       <div>
         <select #typeTech (change)="filterTechsForType(typeTech.value)">
+          <option [value]="'All'">Todas</option>
           <option [value]="'Mobile'">Mobile</option>
           <option [value]="'Front-End'">Front-End</option>
           <option [value]="'Back-End'">Back-End</option>
-          <option [value]="'All'">Todas</option>
         </select>
       </div>
 
@@ -42,9 +42,13 @@
                   <td class="table__td">{{tech.language}}</td>
                   <td class="table__td">{{tech.type}}</td>
                   <td class="table__td">
-                    <img width="50px" height="50px" [src]="tech.logo" [alt]="tech.tech">
+                    <img width="35px" height="35px" [src]="tech.logo" [alt]="tech.tech">
                   </td>
-                  <td class="table__td">Like</td>
+                  <td class="table__td">
+                    <img (click)="likeAndAddTech(tech)" *ngIf="iconPresent(tech) === false" width="35px" height="35px" src="../../../../assets/images/fav.svg" alt="tecnologias" style="fill: red;">
+                    <img (click)="likeAndAddTech(tech)" *ngIf="iconPresent(tech) === true" width="35px" height="35px" src="../../../../assets/images/fav-added.svg" alt="tecnologias" style="fill: red;">
+                    <!-- <button (click)="likeAndAddTech(tech)">Add</button> -->
+                  </td>
               </tr>
           </tbody>
       </table>
