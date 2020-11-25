@@ -1,0 +1,216 @@
+.bg-home {
+  width: 100%;
+  height: auto;
+  background-image: url(../../../../assets/images/Backgrounds/bg-header.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  width: 100%;
+  height: 10rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__brand {
+    width: 20rem;
+  }
+
+  &__container-list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__navigator--item {
+      list-style: none;
+      a {
+        display: inline-block;
+        text-decoration: none;
+        margin-right: 2rem;
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: #333;
+      }
+  }
+}
+
+.hero {
+  width: 100%;
+  height: calc(100vh - 10rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  &__title {
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 400;
+    .title--interview {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .title--wolox {
+      font-weight: 600;
+      color: #9fc739;
+    }
+  }
+
+  &__container--image {
+    max-width: 50rem;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.information {
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  &__container--social {
+    width: 50%;
+    height: inherit;
+    background-image: url(../../../../assets/images/img_woloxer.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .social--numbers {
+     font-size: 3.5rem;
+     font-weight: 600;
+     color: #9fc739;
+    }
+
+    .social--names {
+     font-size: 3.5rem;
+     font-weight: 600;
+     color: #00a9e5;
+    }
+
+    .social--conainer-twitter {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .nickname {
+        font-size: 2rem;
+        color: #ffffff;
+        margin-left: 1.2rem;
+        margin-bottom: 1.8rem;
+        margin-top: 1.8rem;
+      }
+    }
+
+  }
+
+  &__container--idea {
+    width: 50%;
+    height: inherit;
+    background-color: #f2f5fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .idea--title {
+      width: 80%;
+      font-size: 3.5rem;
+      line-height: 4rem;
+
+      .idea-products {
+        color: #00a9e5;
+      }
+
+      .idea-ideas {
+        color: #9fc739;
+      }
+    }
+
+  }
+}
+
+.benefits {
+  width: 100%;
+  min-height: 30rem;
+  margin-top: 3rem;
+
+  &__title {
+    font-size: 2.8rem;
+    text-align: center;
+    color: #444c5c;
+    margin-bottom: 7rem;
+  }
+
+  &__container--icons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__container-benefist-info {
+    width: 100%;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      width: 70%;
+      text-align: center;
+      margin: 1rem auto;
+      font-size: 1.6rem;
+      color: #444c5c;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  min-height: 32rem;
+  background-image: url(../../../../assets/images/Backgrounds/bg-footer.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  &__container-information {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 4rem;
+
+}
+
+  &__subtitle {
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin: 2rem auto;
+  }
+
+  &__title-notacion {
+    color: #00a9e5;
+  }
+}
