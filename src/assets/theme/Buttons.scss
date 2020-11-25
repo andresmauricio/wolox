@@ -48,3 +48,10 @@
     background-color: #05bcff;
   }
 }
+
+@media (max-width: 991px) {
+  .btn {
+    min-width: 13rem;
+    max-width: 13rem;
+  }
+}

@@ -46,6 +46,7 @@
 .hero {
   width: 100%;
   height: calc(100vh - 10rem);
+  padding: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -67,9 +68,9 @@
   }
 
   &__container--image {
-    max-width: 50rem;
+    max-width: 50%;
     img {
-      width: 100%;
+      width: 80%;
     }
   }
 }
@@ -189,6 +190,7 @@
 .footer {
   width: 100%;
   min-height: 32rem;
+  padding: 3rem 1rem;
   background-image: url(../../../../assets/images/Backgrounds/bg-footer.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -213,11 +215,52 @@
   &__subtitle {
     font-size: 2.9rem;
     font-weight: 600;
-    margin: 2rem auto;
+    margin: 3rem auto;
     color: $black;
   }
 
   &__title-notacion {
     color: $blue;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    &__brand {
+      width: 10rem;
+    }
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    &__container--image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .information {
+    .social--numbers, .idea--title, .social--names {
+      font-size: 2.5rem;
+     }
+  }
+
+  .benefits {
+    &__container--icons {
+      flex-direction: column;
+    }
+
+    &__container-benefist-info {
+      height: auto;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .footer {
+    .btn {
+      min-width: 20rem;
+      margin-bottom: 3rem;
+    }
   }
 }
