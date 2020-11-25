@@ -22,13 +22,17 @@ export class RegisterComponent implements OnInit {
   ) {
     this.buildForm();
     this.lists = countries.getConuntrie();
-
   }
 
   ngOnInit(): void { }
 
   handlerForm(): void {
     console.log(this.registerFrm.value);
+    if (this.registerFrm.valid) {
+      this.registerUser();
+    } else {
+      this.registerFrm.markAllAsTouched();
+    }
   }
   private registerUser(): void {
     const user: User = this.registerFrm.value;
@@ -40,8 +44,6 @@ export class RegisterComponent implements OnInit {
   public selectDepartament() {
     const countrie = this.registerFrm.get('country').value;
     this.departaments = this.countries.getDepartaments(countrie);
-    console.log(this.departaments);
-
   }
 
   private buildForm(): void {
@@ -50,9 +52,11 @@ export class RegisterComponent implements OnInit {
       last_name: [null, [Validators.required, Validators.maxLength(30)]],
       country: [null, [Validators.required]],
       province: [null, [Validators.required]],
-      mail: [null, [Validators.required]],
+      mail: [null, [Validators.required, Validators.email]],
       phone: [null, [Validators.required]],
       password: [null, [Validators.required]],
+      confirm_password: [null, [Validators.required]],
+      terms_conditions: [null, [Validators.requiredTrue]]
     });
   }
 }

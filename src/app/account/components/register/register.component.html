@@ -1,14 +1,39 @@
-<form [formGroup]="registerFrm" (ngSubmit)="handlerForm()">
-  <input type="text" placeholder="Nombre" formControlName="name">
-  <input type="text" placeholder="Apellido" formControlName="last_name">
-  <select formControlName="country" (change)="selectDepartament()">
-    <option *ngFor="let item of lists" [value]="item.value">{{item.name}}</option>
-  </select>
-  <select formControlName="province">
-    <option *ngFor="let item of departaments" [value]="item.value">{{item.name}}</option>
-  </select>
-  <input type="text" placeholder="Correo" formControlName="mail">
-  <input type="text" placeholder="Celular" formControlName="phone">
-  <input type="text" placeholder="Contraseña" formControlName="password">
-  <button>Enviar</button>
-</form>
+<div class="register">
+  <div class="register__brand">
+    <img src="../../../../assets/images/logo_full_color.svg" alt="Logo Wolox">
+  </div>
+  <form [formGroup]="registerFrm" (ngSubmit)="handlerForm()" class="form">
+    <h1>Registro de usuarios</h1>
+    <input type="text" placeholder="Nombre" formControlName="name" />
+    <input type="text" placeholder="Apellido" formControlName="last_name" />
+    <select formControlName="country" (change)="selectDepartament()">
+      <option *ngFor="let item of lists" [value]="item.value">
+        {{ item.name }}
+      </option>
+    </select>
+    <select formControlName="province">
+      <option *ngFor="let item of departaments" [value]="item.value">
+        {{ item.name }}
+      </option>
+    </select>
+    <input type="text" placeholder="Correo" formControlName="mail" />
+    <input type="text" placeholder="Celular" formControlName="phone" />
+    <input type="password" placeholder="Contraseña" formControlName="password" />
+    <input type="password" placeholder="Confirmar Contraseña" formControlName="confirm_password" />
+    <div class="form__container-check">
+      <input
+        type="checkbox"
+        id="chekTerms"
+        class="custom-control-input"
+        formControlName="terms_conditions"
+      />
+      <label class="custom-control-label" for="chekTerms"
+        >* Al registrarte estás aceptando nuestros
+        <a routerLink="/legal/terminos-y-condiciones" target="_blank">términos y condiciones</a>
+        </label
+      >
+    </div>
+
+    <button type="submit" class="btn button-primary">Regístrarse</button>
+  </form>
+</div>

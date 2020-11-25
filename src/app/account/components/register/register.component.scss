@@ -1,0 +1,80 @@
+@import '../../../../assets/theme/Variables.scss';
+
+.register {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(../../../../assets/images/Backgrounds/bg-header.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__brand {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    img {
+      width: 20rem;
+    }
+  }
+}
+
+.form  {
+  min-width: 32rem;
+  max-width: 60rem;
+  width: 90%;
+  height: auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  h1 {
+    font-size: 3rem;
+     margin-bottom: 2rem;
+   }
+
+  select,
+  input[type=text],
+  input[type=password] {
+    height: 3.8rem;
+    width: 100%;
+    padding: 0 2rem;
+    margin-bottom: 1.3rem;
+    border: 1px solid #DEDEDE;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $black;
+    background: transparent;
+    outline: none;
+
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    &:focus{
+      box-shadow: none;
+      border-color: $blue;
+    }
+
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+  &__container-check {
+    width: 100%;
+    text-align: left;
+  }
+
+.button-primary {
+  margin-top: 2rem;
+}
+
+}
