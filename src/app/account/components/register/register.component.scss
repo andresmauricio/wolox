@@ -22,6 +22,13 @@
   }
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .form  {
   min-width: 32rem;
   max-width: 60rem;
@@ -40,7 +47,10 @@
 
    &__container-field {
     width: 100%;
-    margin-bottom: 1.3rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 50%;
 
     label {
       font-size: 1.5rem;
@@ -52,7 +62,7 @@
     input[type=text],
     input[type=password] {
       height: 3.2rem;
-      width: 100%;
+      width: 90%;
       padding: 0 2rem;
       border: 1px solid #DEDEDE;
       font-size: 1.4rem;
@@ -77,8 +87,9 @@
       -o-border-radius: 1rem;
   }
 
-  .text-danger {
-    color: $red;
+  input::placeholder {
+    color: $gray;
+    font-size: 1.2rem;
   }
 }
 
@@ -86,10 +97,30 @@
   &__container-check {
     width: 100%;
     text-align: left;
+    display: flex;
+    flex-direction: column;
   }
 
 .button-primary {
   margin-top: 2rem;
 }
 
+}
+
+.text-danger {
+  color: $red;
+}
+
+@media (max-width: 991px) {
+  .form {
+    &__container-field {
+      flex: 100%;
+
+      select,
+      input[type=text],
+      input[type=password] {
+        width: 100%;
+      }
+    }
+  }
 }
