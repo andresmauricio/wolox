@@ -1,4 +1,9 @@
 <div class="bg-list">
+  <div class="list__brand">
+    <a routerLink="/">
+      <img src="../../../../assets/images/logo_full_color.svg" alt="Logo Wolox">
+    </a>
+  </div>
   <div class="container">
 
     <h1>Lista de tecnologías</h1>
@@ -42,16 +47,17 @@
                   <td class="table__td">{{tech.language}}</td>
                   <td class="table__td">{{tech.type}}</td>
                   <td class="table__td">
-                    <img width="35px" height="35px" [src]="tech.logo" [alt]="tech.tech">
+                    <img  [src]="tech.logo" [alt]="tech.tech">
                   </td>
                   <td class="table__td">
-                    <img (click)="likeAndAddTech(tech)" *ngIf="iconPresent(tech) === false" width="35px" height="35px" src="../../../../assets/images/fav.svg" alt="tecnologias" style="fill: red;">
-                    <img (click)="likeAndAddTech(tech)" *ngIf="iconPresent(tech) === true" width="35px" height="35px" src="../../../../assets/images/fav-added.svg" alt="tecnologias" style="fill: red;">
-                    <!-- <button (click)="likeAndAddTech(tech)">Add</button> -->
+                    <img (click)="likeAndAddTech(tech)" *ngIf="iconPresent(tech) === false"  src="../../../../assets/images/fav.svg" alt="tecnologias" style="fill: red;">
+                    <img (click)="likeAndAddTech(tech)" *ngIf="iconPresent(tech) === true"  src="../../../../assets/images/fav-added.svg" alt="tecnologias" style="fill: red;">
                   </td>
               </tr>
           </tbody>
       </table>
+
+      <p>Cantidad de Tecnologías {{ techs.length }}</p>
     </div>
   </div>
 </div>
