@@ -1,8 +1,12 @@
 <form [formGroup]="registerFrm" (ngSubmit)="handlerForm()">
   <input type="text" placeholder="Nombre" formControlName="name">
   <input type="text" placeholder="Apellido" formControlName="last_name">
-  <input type="text" placeholder="País" formControlName="country">
-  <input type="text" placeholder="Departamento" formControlName="province">
+  <select formControlName="country" (change)="selectDepartament()">
+    <option *ngFor="let item of lists" [value]="item.value">{{item.name}}</option>
+  </select>
+  <select formControlName="province">
+    <option *ngFor="let item of departaments" [value]="item.value">{{item.name}}</option>
+  </select>
   <input type="text" placeholder="Correo" formControlName="mail">
   <input type="text" placeholder="Celular" formControlName="phone">
   <input type="text" placeholder="Contraseña" formControlName="password">
