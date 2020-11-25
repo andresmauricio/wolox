@@ -13,11 +13,20 @@
   font-family: 'FireSans', sans-serif;
   border-radius: 3rem;
   cursor: pointer;
+  outline: none;
   -webkit-border-radius: 3rem;
   -moz-border-radius: 3rem;
   -ms-border-radius: 3rem;
   -o-border-radius: 3rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: all 350ms ease-in;
+  -webkit-transition: all 350ms ease-in;
+  -moz-transition: all 350ms ease-in;
+  -ms-transition: all 350ms ease-in;
+  -o-transition: all 350ms ease-in;
+
+  :focus {
+    outline: 0;
+  }
 }
 
 .button-outline-primary {
