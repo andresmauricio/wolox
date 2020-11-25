@@ -15,6 +15,8 @@ export class RegisterComponent implements OnInit {
   public lists;
   public departaments;
 
+  private regexNames = '^[a-zA-ZÀ-ÿ-ZñÑáéíóúÁÉÍÓÚ\u00f1\u00d1s ]+$';
+
   constructor(
     private accountService: AccountService,
     private buildFrm: FormBuilder,
@@ -26,7 +28,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  handlerForm(): void {
+  public handlerForm(): void {
     console.log(this.registerFrm.value);
     if (this.registerFrm.valid) {
       this.registerUser();
@@ -41,19 +43,26 @@ export class RegisterComponent implements OnInit {
       .subscribe((response) => console.log(response));
   }
 
-  public selectDepartament() {
+  public selectDepartament(): void {
     const countrie = this.registerFrm.get('country').value;
     this.departaments = this.countries.getDepartaments(countrie);
   }
 
+  public controlError(controlName) {
+    const control = this.registerFrm.controls[controlName];
+    if (control.touched || control.dirty) {
+      return control.errors;
+    }
+  }
+
   private buildForm(): void {
     this.registerFrm = this.buildFrm.group({
-      name: [null, [Validators.required, Validators.maxLength(30)]],
-      last_name: [null, [Validators.required, Validators.maxLength(30)]],
+      name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.regexNames)]],
+      last_name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.regexNames)]],
       country: [null, [Validators.required]],
       province: [null, [Validators.required]],
       mail: [null, [Validators.required, Validators.email]],
-      phone: [null, [Validators.required]],
+      phone: [null, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
       password: [null, [Validators.required]],
       confirm_password: [null, [Validators.required]],
       terms_conditions: [null, [Validators.requiredTrue]]

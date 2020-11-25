@@ -40,20 +40,20 @@
 
    &__container-field {
     width: 100%;
+    margin-bottom: 1.3rem;
 
     label {
       font-size: 1.5rem;
-      font-weight: 500;
+      font-weight: 600;
       color: $black;
     }
 
     select,
     input[type=text],
     input[type=password] {
-      height: 3.8rem;
+      height: 3.2rem;
       width: 100%;
       padding: 0 2rem;
-      margin-bottom: 1.3rem;
       border: 1px solid #DEDEDE;
       font-size: 1.4rem;
       font-weight: 500;
@@ -76,7 +76,11 @@
       -ms-border-radius: 1rem;
       -o-border-radius: 1rem;
   }
-   }
+
+  .text-danger {
+    color: $red;
+  }
+}
 
 
   &__container-check {

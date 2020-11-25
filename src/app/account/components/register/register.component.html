@@ -8,11 +8,37 @@
     <div class="form__container-field">
       <label>Nombres</label>
       <input type="text" placeholder="Jhon" formControlName="name" />
+      <small class="text-danger"
+            *ngIf="controlError('name')?.required">
+            Este campo es requerido
+      </small>
+      <small class="text-danger" *ngIf="controlError('name')?.minlength" >
+        Mínimo 3 caracteres.
+      </small>
+      <small class="text-danger" *ngIf="controlError('name')?.maxlength" >
+        Máximo 30 caracteres.
+      </small>
+      <small class="text-danger" *ngIf="controlError('name')?.pattern" >
+        El nombre no puede tener números o simbolos
+      </small>
     </div>
 
     <div class="form__container-field">
       <label>Apellidos</label>
       <input type="text" placeholder="Doe" formControlName="last_name" />
+      <small class="text-danger"
+            *ngIf="controlError('last_name')?.required">
+            Este campo es requerido
+      </small>
+      <small class="text-danger" *ngIf="controlError('last_name')?.minlength" >
+        Mínimo 3 caracteres.
+      </small>
+      <small class="text-danger" *ngIf="controlError('last_name')?.maxlength" >
+        Máximo 30 caracteres.
+      </small>
+      <small class="text-danger" *ngIf="controlError('last_name')?.pattern" >
+        El nombre no puede tener números o simbolos
+      </small>
     </div>
 
     <div class="form__container-field">
@@ -22,6 +48,10 @@
           {{ item.name }}
         </option>
       </select>
+      <small class="text-danger"
+            *ngIf="controlError('country')?.required">
+            Este campo es requerido
+      </small>
     </div>
 
     <div class="form__container-field">
@@ -31,26 +61,52 @@
           {{ item.name }}
         </option>
       </select>
+      <small class="text-danger"
+            *ngIf="controlError('province')?.required">
+            Este campo es requerido
+      </small>
     </div>
 
     <div class="form__container-field">
       <label>Correo Electronico</label>
       <input type="text" placeholder="jhondoe@wolox.com" formControlName="mail" />
+      <small class="text-danger"
+            *ngIf="controlError('mail')?.required">
+            Este campo es requerido
+      </small>
     </div>
 
     <div class="form__container-field">
       <label>Teléfono</label>
       <input type="text" placeholder="3157350570" formControlName="phone" />
+      <small class="text-danger"
+            *ngIf="controlError('phone')?.required">
+            Este campo es requerido
+      </small>
+      <small class="text-danger" *ngIf="controlError('phone')?.minlength" >
+        Mínimo 10 caracteres.
+      </small>
+      <small class="text-danger" *ngIf="controlError('phone')?.maxlength" >
+        Máximo 10 caracteres.
+      </small>
     </div>
 
     <div class="form__container-field">
       <label>Contraseña</label>
       <input type="password" placeholder="*******" formControlName="password" />
+      <small class="text-danger"
+            *ngIf="controlError('password')?.required">
+            Este campo es requerido
+      </small>
     </div>
 
     <div class="form__container-field">
       <label>Confirmar Contaseña</label>
       <input type="password" placeholder="********" formControlName="confirm_password" />
+      <small class="text-danger"
+            *ngIf="controlError('confirm_password')?.required">
+            Este campo es requerido
+      </small>
     </div>
 
     <div class="form__container-check">
@@ -63,8 +119,11 @@
       <label class="custom-control-label" for="chekTerms"
         >* Al registrarte estás aceptando nuestros
         <a routerLink="/legal/terminos-y-condiciones" target="_blank">términos y condiciones</a>
-        </label
-      >
+      </label >
+      <small class="text-danger"
+             *ngIf="controlError('terms_conditions')?.required">
+      Tienes que aceptar términos y condiciones para continuar
+      </small>
     </div>
 
     <button type="submit" class="btn button-primary">Regístrarse</button>
