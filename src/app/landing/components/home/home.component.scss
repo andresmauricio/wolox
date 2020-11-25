@@ -1,3 +1,5 @@
+@import '../../../../assets/theme/Variables.scss';
+
 .bg-home {
   width: 100%;
   height: auto;
@@ -57,7 +59,7 @@
 
     .title--wolox {
       font-weight: 600;
-      color: #9fc739;
+      color: $green;
     }
   }
 
@@ -91,13 +93,13 @@
     .social--numbers {
      font-size: 3.5rem;
      font-weight: 600;
-     color: #9fc739;
+     color: $green;
     }
 
     .social--names {
      font-size: 3.5rem;
      font-weight: 600;
-     color: #00a9e5;
+     color: $blue;
     }
 
     .social--conainer-twitter {
@@ -109,7 +111,7 @@
 
       .nickname {
         font-size: 2rem;
-        color: #ffffff;
+        color: $white;
         margin-left: 1.2rem;
         margin-bottom: 1.8rem;
         margin-top: 1.8rem;
@@ -133,11 +135,11 @@
       line-height: 4rem;
 
       .idea-products {
-        color: #00a9e5;
+        color: $blue;
       }
 
       .idea-ideas {
-        color: #9fc739;
+        color: $green;
       }
     }
 
@@ -211,6 +213,6 @@
   }
 
   &__title-notacion {
-    color: #00a9e5;
+    color: $blue;
   }
 }
