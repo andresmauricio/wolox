@@ -43,7 +43,11 @@ export class RegisterComponent implements OnInit {
     const user: User = this.registerFrm.value;
     this.accountService
       .register(user)
-      .subscribe((response) => console.log(response));
+      .subscribe((response) => {
+        console.log(response);
+        delete user.password;
+        localStorage.setItem('user', JSON.stringify(user));
+      });
   }
 
   public selectDepartament(): void {

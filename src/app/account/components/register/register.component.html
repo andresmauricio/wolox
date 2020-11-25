@@ -76,6 +76,9 @@
               *ngIf="controlError('mail')?.required">
               Este campo es requerido
         </small>
+        <small class="text-danger" *ngIf="controlError('mail')?.email" >
+          Ingrese un correo valido
+        </small>
       </div>
 
       <div class="form__container-field">
