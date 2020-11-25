@@ -26,11 +26,14 @@ export class RegisterComponent implements OnInit {
     this.lists = countries.getConuntrie();
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   public handlerForm(): void {
     console.log(this.registerFrm.value);
-    if (this.registerFrm.valid && !this.passwordsNoMatch('password', 'confirm_password')) {
+    if (
+      this.registerFrm.valid &&
+      !this.passwordsNoMatch('password', 'confirm_password')
+    ) {
       this.registerUser();
     } else {
       this.registerFrm.markAllAsTouched();
@@ -69,15 +72,44 @@ export class RegisterComponent implements OnInit {
 
   private buildForm(): void {
     this.registerFrm = this.buildFrm.group({
-      name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.regexNames)]],
-      last_name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.regexNames)]],
+      name: [
+        null,
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(30),
+          Validators.pattern(this.regexNames),
+        ],
+      ],
+      last_name: [
+        null,
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(30),
+          Validators.pattern(this.regexNames),
+        ],
+      ],
       country: [null, [Validators.required]],
       province: [null, [Validators.required]],
       mail: [null, [Validators.required, Validators.email]],
-      phone: [null, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-      password: [null, [Validators.required, Validators.pattern('^([a-z0-9]){6,12}$')]],
-      confirm_password: [null, [Validators.required, Validators.pattern('^([a-z0-9]){6,12}$')]],
-      terms_conditions: [null, [Validators.requiredTrue]]
+      phone: [
+        null,
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(10),
+        ],
+      ],
+      password: [
+        null,
+        [Validators.required, Validators.pattern('^([a-z0-9]){6,12}$')],
+      ],
+      confirm_password: [
+        null,
+        [Validators.required, Validators.pattern('^([a-z0-9]){6,12}$')],
+      ],
+      terms_conditions: [null, [Validators.requiredTrue]],
     });
   }
 }
