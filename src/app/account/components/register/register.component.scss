@@ -38,35 +38,46 @@
      margin-bottom: 2rem;
    }
 
-  select,
-  input[type=text],
-  input[type=password] {
-    height: 3.8rem;
+   &__container-field {
     width: 100%;
-    padding: 0 2rem;
-    margin-bottom: 1.3rem;
-    border: 1px solid #DEDEDE;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: $black;
-    background: transparent;
-    outline: none;
 
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-
-    &:focus{
-      box-shadow: none;
-      border-color: $blue;
+    label {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: $black;
     }
 
-    border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
-}
+    select,
+    input[type=text],
+    input[type=password] {
+      height: 3.8rem;
+      width: 100%;
+      padding: 0 2rem;
+      margin-bottom: 1.3rem;
+      border: 1px solid #DEDEDE;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: $black;
+      background: transparent;
+      outline: none;
+
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+
+      &:focus{
+        box-shadow: none;
+        border-color: $blue;
+      }
+
+      border-radius: 1rem;
+      -webkit-border-radius: 1rem;
+      -moz-border-radius: 1rem;
+      -ms-border-radius: 1rem;
+      -o-border-radius: 1rem;
+  }
+   }
+
 
   &__container-check {
     width: 100%;
