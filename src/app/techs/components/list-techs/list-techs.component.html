@@ -2,10 +2,10 @@
   <div class="container">
 
     <h1>Lista de tecnologías</h1>
-
-    <div>
+    <div class="container__filter-contain">
+      <h2>Filtros</h2>
       <div>
-        <input type="text" #name (keyup)="filterTechForName(name.value)">
+        <input type="text" #name (keyup)="filterTechForName(name.value)" placeholder="Ingrese un nombre">
       </div>
 
       <div>
