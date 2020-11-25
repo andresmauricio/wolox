@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
 
   public handlerForm(): void {
     console.log(this.registerFrm.value);
-    if (this.registerFrm.valid) {
+    if (this.registerFrm.valid && !this.passwordsNoMatch('password', 'confirm_password')) {
       this.registerUser();
     } else {
       this.registerFrm.markAllAsTouched();
@@ -55,6 +55,18 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  passwordsNoMatch(password, confirmPassword) {
+    if (
+      this.registerFrm.controls[password].valid &&
+      this.registerFrm.controls[confirmPassword].valid
+    ) {
+      return (
+        this.registerFrm.controls[password].value !==
+        this.registerFrm.controls[confirmPassword].value
+      );
+    }
+  }
+
   private buildForm(): void {
     this.registerFrm = this.buildFrm.group({
       name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.regexNames)]],
@@ -63,8 +75,8 @@ export class RegisterComponent implements OnInit {
       province: [null, [Validators.required]],
       mail: [null, [Validators.required, Validators.email]],
       phone: [null, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-      password: [null, [Validators.required]],
-      confirm_password: [null, [Validators.required]],
+      password: [null, [Validators.required, Validators.pattern('^([a-z0-9]){6,12}$')]],
+      confirm_password: [null, [Validators.required, Validators.pattern('^([a-z0-9]){6,12}$')]],
       terms_conditions: [null, [Validators.requiredTrue]]
     });
   }

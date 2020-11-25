@@ -98,6 +98,9 @@
             *ngIf="controlError('password')?.required">
             Este campo es requerido
       </small>
+      <small class="text-danger" *ngIf="controlError('password')?.pattern" >
+        La contraseña debe ser alfanúmerica y  mínimo de 6 y maxímo de 12.
+      </small>
     </div>
 
     <div class="form__container-field">
@@ -107,6 +110,15 @@
             *ngIf="controlError('confirm_password')?.required">
             Este campo es requerido
       </small>
+      <small
+          class="text-danger"
+          *ngIf="passwordsNoMatch('password', 'confirm_password')"
+        >
+          Las contraseñas no coinciden
+    </small>
+    <small class="text-danger" *ngIf="controlError('confirm_password')?.pattern" >
+      La contraseña debe ser alfanúmerica y  mínimo de 6 y maxímo de 12.
+    </small>
     </div>
 
     <div class="form__container-check">
