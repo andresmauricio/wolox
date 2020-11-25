@@ -6,7 +6,12 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./landing/landing.module').then((m) => m.LandingModule),
-  }
+  },
+  {
+    path: 'cuenta',
+    loadChildren: () =>
+      import('./account/account.module').then((m) => m.AccountModule),
+  },
 ];
 
 @NgModule({
