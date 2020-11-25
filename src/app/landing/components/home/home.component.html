@@ -1,20 +1,20 @@
-<div class="bg-home">
-  <header class="header">
-    <img class="header__brand" src="../../../../assets/images/logo_full_color.svg" alt="Logo Wolox" />
-    <nav class="header__navigator">
-      <ul class="header__container-list">
-        <li class="header__navigator--item">
-          <a href="#">Inicio</a>
-        </li>
-        <li class="header__navigator--item">
-          <a href="#">Beneficios</a>
-        </li>
-        <li class="header__navigator--item">
-          <button class="btn button-outline-primary" href="#">Login</button>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<header class="header">
+  <img class="header__brand" src="../../../../assets/images/logo_full_color.svg" alt="Logo Wolox" />
+  <nav class="header__navigator">
+    <ul class="header__container-list">
+      <li class="header__navigator--item">
+        <a href="#hero">Inicio</a>
+      </li>
+      <li class="header__navigator--item">
+        <a href="#benefits">Beneficios</a>
+      </li>
+      <li class="header__navigator--item">
+        <button class="btn button-outline-primary" href="#">Login</button>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="bg-home" id="hero">
 
   <section class="hero">
     <h1 class="hero__title">
@@ -41,7 +41,7 @@
         <img src="../../../../assets/images/twitter.svg" width="25px" alt="Logo Twitter">
         <span class="nickname">@Wolox</span>
       </div>
-      <button class="btn button-outline-secondary">Siguenos</button>
+      <button class="btn button-outline-secondary" (click)="redirectsExterns('https://twitter.com/Wolox')">Siguenos</button>
   </div>
   <div class="information__container--idea">
     <h2 class="idea--title">Trabajamos para
@@ -51,7 +51,7 @@
   </div>
 </main>
 
-<section class="benefits">
+<section class="benefits" id="benefits">
   <h3 class="benefits__title">Entre los beneficios que ofrecemos se encuentran ;)</h3>
   <div class="benefits__container--icons">
     <div class="benefits__container-benefist-info">
@@ -86,7 +86,7 @@
   <div class="footer__container-information">
   <h3 class="footer__title">Gracias por <span class="footer__title-notacion">completar el ejercicio</span></h3>
   <h4 class="footer__subtitle">Te invitamos a ver más información</h4>
-  <button class="btn button-primary">Conocer más</button>
+  <button class="btn button-primary" (click)="redirectsExterns('https://www.wolox.com.ar/')">Conocer más</button>
 </div>
 
 <img src="../../../../assets/images/logo-footer.svg" alt="Logo Wolox">
